@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Mergui City</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container w-2/3 ">
+        <div class="promo-box">
+            <img src="./Images/backgroundimg.jpg" alt="Mergui City" class="promo-image">
+            <div class="promo-content">
+                <img src="./Images/logo.jpg" alt="Mergui City Logo" class="logo">
+                <h1>Mergui City</h1>
+                <p>Take a Break and Relax!</p>
+            </div>
+        </div>
+        <div class="form-box">
+            <h2>Create Account</h2>
+            <!-- <form id="signup-form" method="post">
+                <input type="text" placeholder="Full Name" required>
+                <input type="text" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <div class="terms">
+                    <input type="checkbox" id="termsCheckBox" class="termsCheckBox" required>
+                    <label for="termsCheckBox">I agree to the terms of Services ...</label>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form> -->
+            <form action="signup" method="POST">
+                <!-- Name -->
+                <div class="mb-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                        Name
+                    </label>
+                    <input name="name" class="w-full p-3 bg-gray-200 rounded border border-gray-300" id="name" type="text" placeholder="Enter your name" required>
+                </div>
+                
+                <!-- Email -->
+                <div class="mb-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                        Email
+                    </label>
+                    <input name="email" class="w-full p-3 bg-gray-200 rounded border border-gray-300" id="email" type="email" placeholder="Enter your email" required>
+                </div>
+    
+                <!-- Password -->
+                <div class="mb-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        Password
+                    </label>
+                    <input name="password" class="w-full p-3 bg-gray-200 rounded border border-gray-300" id="password" type="password" placeholder="Enter your password" required>
+                </div>
+    
+                <!-- Role Selection -->
+                <div class="mb-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="role">
+                        Select Role
+                    </label>
+                    <select name="role" id="role" class="w-full p-3 bg-gray-200 rounded border border-gray-300" onchange="toggleReferralCode()" required>
+                        <option value="user">User</option>
+                        <option value="coadmin">Coadmin</option>
+                        <option value="admin">Admin</option>
+                    </select>
+
+                    <div id="referralCodeContainer" class="mb-4 hidden">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="referralCode">
+                            Referral Code
+                        </label>
+                        <input name="code" class="w-full p-3 bg-gray-200 rounded border border-gray-300" id="referralCode" type="text" placeholder="Enter your referral code">
+                    </div>
+                </div>
+    
+                <!-- Referral Code (hidden by default) -->
+                
+    
+                <!-- Submit Button -->
+                <div class="flex items-center justify-between">
+                <button class="w-full p-4 bg-teal-500 text-white border-none rounded cursor-pointer text-base hover:bg-teal-600 transition duration-200" type="submit">
+                        Sign Up
+                    </button>
+                </div>
+            </form>
+            <p class="login-link">Already have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+    <script>
+        function toggleReferralCode() {
+            const roleSelect = document.getElementById('role');
+            const referralCodeContainer = document.getElementById('referralCodeContainer');
+
+            if (roleSelect.value === 'coadmin') {
+                referralCodeContainer.classList.remove('hidden');
+            } else {
+                referralCodeContainer.classList.add('hidden');
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
